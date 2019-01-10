@@ -1,0 +1,27 @@
+#--spring.config.location=classpath:/application.yml,classpath:/application-debug.yml
+spring:
+  profiles:
+    active: PROC
+  redis:
+    host: 192.168.1.1
+    port: 6379
+    database: 15
+    password: XGerry@2019
+  datasource:
+    wms:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+      url: jdbc:sqlserver://192.168.1.1; DatabaseName=Gerry
+      username: admin
+      password: admin
+      min-idle: 7
+      max-active: 14
+      max-wait: 10000
+      initial-size: 1
+      db-type: sqlserver
+      filters: stat,slf4j
+server:
+  port: 9091
+  connection-timeout: 120000
+  tomcat:
+    max-connections: 5000
