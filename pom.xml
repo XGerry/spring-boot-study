@@ -120,5 +120,6 @@
 
     <modules>
         <module>QuickStart</module>
+        <module>RESTful</module>
     </modules>
 </project>
