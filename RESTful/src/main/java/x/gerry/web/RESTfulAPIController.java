@@ -26,8 +26,8 @@ public class RESTfulAPIController {
      * DELETE（DELETE）：从服务器删除资源。
      */
 
-    //@GetMapping("/demos")
-    @RequestMapping(value = { "/demos", "/" }, method = RequestMethod.GET)
+    @GetMapping("/demos")
+    //@RequestMapping(value = { "/demos", "/" }, method = RequestMethod.GET)
     public List<DemoInfo> findAll()
     {
         return service.findAll();
@@ -40,5 +40,30 @@ public class RESTfulAPIController {
         // 除了@ModelAttribute绑定参数之外，还可以通过@RequestParam从页面中传递参数
         System.out.println(JSON.toJSONString(demo));
         return service.insertDemoInfo(demo);
+    }
+
+    @RequestMapping(value = "/demo/{id}", method = RequestMethod.GET)
+    public DemoInfo findDemoInfo(@PathVariable Integer id) {
+        // GET请求，用来获取信息
+        // url中的id可通过@PathVariable绑定到函数的参数中
+        return service.findDemoInfo(id);
+    }
+
+    @RequestMapping(value = "/demo/{id}", method = RequestMethod.PUT)
+    public List<DemoInfo> updateDemoInfo(@PathVariable Integer id) {
+        // PUT请求，用来更新信息
+        DemoInfo demo = new DemoInfo();
+        demo.setId(id);
+        demo.setDesc("我是第" + id + "ST");
+        demo.setName("TS__" + id);
+        return service.updateDemoInfo(demo);
+    }
+
+    @RequestMapping(value = "/demo/{id}", method = RequestMethod.DELETE)
+    public List<DemoInfo> deleteDemoInfo(@PathVariable Integer id) {
+        // DELETE请求，用来删除信息
+        DemoInfo demo = new DemoInfo();
+        demo.setId(id);
+        return service.deleteDemoInfo(demo);
     }
 }
