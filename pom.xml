@@ -129,5 +129,6 @@
         <module>QuickStart</module>
         <module>RESTful</module>
         <module>Logs</module>
+        <module>Scheduled</module>
     </modules>
 </project>
