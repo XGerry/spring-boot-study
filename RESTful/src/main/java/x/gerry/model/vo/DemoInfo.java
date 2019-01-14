@@ -1,5 +1,6 @@
 package x.gerry.model.vo;
 
+
 import java.io.Serializable;
 
 /**
