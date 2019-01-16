@@ -137,5 +137,7 @@
         <module>Logs</module>
         <module>Scheduled</module>
         <module>Async</module>
+        <module>GlobalException</module>
+        <module>AOP</module>
     </modules>
 </project>
