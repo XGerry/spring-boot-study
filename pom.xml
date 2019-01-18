@@ -139,5 +139,6 @@
         <module>Async</module>
         <module>GlobalException</module>
         <module>AOP</module>
+        <module>Swagger</module>
     </modules>
 </project>
