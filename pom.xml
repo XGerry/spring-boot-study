@@ -140,5 +140,6 @@
         <module>GlobalException</module>
         <module>AOP</module>
         <module>Swagger</module>
+        <module>JdbcTemplate</module>
     </modules>
 </project>
